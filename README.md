@@ -1,20 +1,21 @@
 # 📈 Sakhi-Sampatti
 
+![Flutter](https://img.shields.io/badge/Flutter-Frontend-02569B?style=for-the-badge&logo=flutter)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
 ![Django](https://img.shields.io/badge/Django-4.0%2B-092E20?style=for-the-badge&logo=django)
 ![Flask](https://img.shields.io/badge/Flask-3.0%2B-000000?style=for-the-badge&logo=flask)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-Welcome to **Sakhi-Sampatti**, a powerful and robust backend ecosystem built to provide real-time and historical stock market data. This project leverages the capabilities of **yfinance** and **TwelveData API** to deliver seamless, fast, and cached stock quotes, making it the perfect foundation for financial applications, investment trackers, and market analysis tools.
+Welcome to **Sakhi-Sampatti**, a full-stack stock market tracking and analysis application. This project features a beautiful cross-platform frontend built with **Flutter**, powered by a dual-backend architecture using **Django** and **Flask** to deliver seamless, real-time stock quotes via **yfinance** and **TwelveData API**.
 
 ---
 
 ## 🌟 Key Features
 
+- **📱 Cross-Platform UI**: A gorgeous frontend application built in Flutter (`my_app`) targeting mobile and web.
 - **🚀 Real-Time Stock Quotes**: Instantly fetch live market data for any Indian (NSE) or US stock.
 - **📊 Historical Data API**: Retrieve rich historical stock metrics across various periods (1D, 1W, 1M, 1Y, ALL).
 - **⚡ Built-in Caching**: Avoids rate-limits and accelerates response times using optimized caching layers.
-- **🔄 Smart Fallbacks**: Gracefully switches between TwelveData and yfinance to ensure maximum uptime and data availability.
 - **🌐 Dual-Backend Setup**:
   - A lightweight, ultra-fast **Flask** microservice for stock fetching (`backend.py`).
   - A full-fledged **Django** backend (`backend/`) equipped for user management, scalable databases, and enterprise-grade APIs.
@@ -25,13 +26,15 @@ Welcome to **Sakhi-Sampatti**, a powerful and robust backend ecosystem built to 
 
 ```bash
 Sakhi-Sampatti/
-├── backend.py            # The standalone Flask stock-fetching API
-├── requirements.txt      # Master list of all project dependencies
+├── my_app/               # The Flutter Frontend App (Mobile/Web UI)
+│   ├── pubspec.yaml      # Flutter dependencies
+│   └── lib/              # Frontend Dart source code
 ├── backend/              # The Django robust backend project
 │   ├── api/              # Django app for core models and views
 │   ├── backend/          # Django project settings
-│   ├── manage.py         # Django management script
-│   └── db.sqlite3        # Local SQLite database
+│   └── manage.py         # Django management script
+├── backend.py            # The standalone Flask stock-fetching API
+├── requirements.txt      # Master list of all Python dependencies
 └── .gitignore            # Git exclusion settings
 ```
 
@@ -45,25 +48,33 @@ git clone https://github.com/Divc18/Sakhi-Sampatti.git
 cd Sakhi-Sampatti
 ```
 
-### 2. Set Up a Virtual Environment
-It's highly recommended to use an isolated Python environment.
+### 2. Frontend Setup (Flutter)
+Navigate to the `my_app` directory to set up the user interface. You will need the Flutter SDK installed.
 ```bash
-# Windows
-python -m venv venv
-.\venv\Scripts\activate
-
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+cd my_app
+flutter pub get
+flutter run
 ```
 
-### 3. Install Dependencies
+### 3. Backend Setup (Python)
+It's highly recommended to use an isolated Python environment for the backend servers.
 ```bash
+# Return to the root folder
+cd ..
+
+# Create and activate a virtual environment
+python -m venv venv
+# On Windows:
+.\venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
 ### 4. Configure Environment Variables
-You'll need an API key from TwelveData if you want live fallback quotes. Create a `.env` file or export it directly:
+You'll need an API key from TwelveData if you want live fallback quotes.
 ```bash
 # Windows (PowerShell)
 $env:TWELVE_DATA_API_KEY="your_api_key_here"
@@ -108,5 +119,3 @@ python manage.py runserver
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Divc18/Sakhi-Sampatti/issues).
 
-## 📄 License
-This project is open-source and licensed under the MIT License.
