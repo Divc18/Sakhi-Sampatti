@@ -1,0 +1,42 @@
+name: sakhi_sampati
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  url_launcher: ^6.2.6   # ✅ keep only one
+  file_picker: ^8.0.0+1
+  path_provider: ^2.1.5
+  open_filex: ^4.7.0
+  speech_to_text: ^6.6.0
+  video_player: ^2.8.0
+  chewie: ^1.8.0
+  youtube_player_flutter: ^9.0.0
+  shared_preferences: ^2.2.2
+  flutter_tts: ^3.8.5
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/app_logo.jpg
+    - assets/govt.jpeg
+    - assets/person.jpeg
+    - assets/videos/video1.mp4
+    - assets/videos/video2.mp4
+    - assets/videos/video3.mp4
+
+

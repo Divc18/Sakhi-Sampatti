@@ -1,0 +1,97 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -d chrome
+
+## exception
+
+TimeoutException: TimeoutException after 0:00:05.000000: Future not completed
+
+```
+#0      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1042:24)
+<asynchronous suspension>
+#1      WebkitDebugger.enable (package:dwds/src/debugging/webkit_debugger.dart:158:9)
+<asynchronous suspension>
+#2      Debugger._initialize (package:dwds/src/debugging/debugger.dart:253:5)
+<asynchronous suspension>
+#3      Debugger.create (package:dwds/src/debugging/debugger.dart:232:5)
+<asynchronous suspension>
+#4      ChromeProxyService.createIsolate (package:dwds/src/services/chrome/chrome_proxy_service.dart:282:22)
+<asynchronous suspension>
+#5      ChromeProxyService.create (package:dwds/src/services/chrome/chrome_proxy_service.dart:144:5)
+<asynchronous suspension>
+#6      ChromeDebugService.start (package:dwds/src/services/chrome/chrome_debug_service.dart:76:32)
+<asynchronous suspension>
+#7      DevHandler._createChromeAppServices (package:dwds/src/handlers/dev_handler.dart:363:26)
+<asynchronous suspension>
+#8      DevHandler.loadAppServices (package:dwds/src/handlers/dev_handler.dart:333:23)
+<asynchronous suspension>
+#9      DevHandler.createDebugConnectionForChrome (package:dwds/src/handlers/dev_handler.dart:654:30)
+<asynchronous suspension>
+#10     Dwds.debugConnection (package:dwds/dart_web_debug_service.dart:68:14)
+<asynchronous suspension>
+#11     WebDevFS.connect.<anonymous closure> (package:flutter_tools/src/isolated/devfs_web.dart:160:17)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel beta, 3.42.0-0.0.pre, on macOS 26.3 25D125 darwin-arm64
+    (Rosetta), locale en-IN) [351ms]
+    [32m•[39m Flutter version 3.42.0-0.0.pre on channel beta at
+      /Users/apoorvar/development/flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 9325183a87 (3 weeks ago), 2026-02-10 11:00:06 -0800
+    [32m•[39m Engine revision 3543c00c80
+    [32m•[39m Dart version 3.12.0 (build 3.12.0-113.1.beta)
+    [32m•[39m DevTools version 2.54.0
+    [32m•[39m Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop,
+      enable-windows-desktop, enable-android, enable-ios, cli-animations,
+      enable-native-assets, omit-legacy-version-file, enable-lldb-debugging,
+      enable-uiscene-migration
+
+[33m[!][39m Android toolchain - develop for Android devices (Android SDK version 36.1.0)
+    [1,583ms]
+    [32m•[39m Android SDK at /Users/apoorvar/Library/Android/sdk
+    [32m•[39m Emulator version 36.4.9.0 (build_id 14788078) (CL:N/A)
+    [32m•[39m Platform android-36, build-tools 36.1.0
+    [32m•[39m Java binary at: /Applications/Android
+      Studio.app/Contents/jbr/Contents/Home/bin/java
+      This is the JDK bundled with the latest Android Studio installation on this
+      machine.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    [32m•[39m Java version OpenJDK Runtime Environment (build 21.0.8+-14196175-b1038.72)
+    [33m![39m Some Android licenses not accepted. To resolve this, run: flutter doctor
+      --android-licenses
+
+[31m[✗][39m Xcode - develop for iOS and macOS [255ms]
+    [31m✗[39m Xcode installation is incomplete; a full installation is necessary for iOS
+      and macOS development.
+      Download at: https://developer.apple.com/xcode/
+      Or install Xcode via the App Store.
+      Once installed, run:
+        sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+        sudo xcodebuild -runFirstLaunch
+    [31m✗[39m CocoaPods not installed.
+        CocoaPods is a package manager for iOS or macOS platform code.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/to/platform-plugins
+      For installation instructions, see
+      https://guides.cocoapods.org/using/getting-started.html#installation
+
+[32m[✓][39m Chrome - develop for the web [116ms]
+    [32m•[39m Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[32m[✓][39m Connected device (2 available) [322ms]
+    [32m•[39m macOS (desktop) • macos  • darwin-arm64   • macOS 26.3 25D125 darwin-arm64
+      (Rosetta)
+    [32m•[39m Chrome (web)    • chrome • web-javascript • Google Chrome 145.0.7632.117
+
+[32m[✓][39m Network resources [510ms]
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```
