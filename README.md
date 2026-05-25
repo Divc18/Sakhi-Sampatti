@@ -4,7 +4,6 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
 ![Django](https://img.shields.io/badge/Django-4.0%2B-092E20?style=for-the-badge&logo=django)
 ![Flask](https://img.shields.io/badge/Flask-3.0%2B-000000?style=for-the-badge&logo=flask)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 Welcome to **Sakhi-Sampatti**, a full-stack stock market tracking and analysis application. This project features a beautiful cross-platform frontend built with **Flutter**, powered by a dual-backend architecture using **Django** and **Flask** to deliver seamless, real-time stock quotes via **yfinance** and **TwelveData API**.
 
